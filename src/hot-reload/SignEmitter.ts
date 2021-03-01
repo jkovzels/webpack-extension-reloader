@@ -44,7 +44,7 @@ export default class SignEmitter {
     reloadPage: boolean,
     onlyPageChanged: boolean,
   ): Promise<any> {
-    return new Promise((res, rej) => {
+    return new Promise<void>((res, rej) => {
       this._safeSignChange(reloadPage, onlyPageChanged, res, rej);
     });
   }

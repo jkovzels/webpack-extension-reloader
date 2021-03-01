@@ -50,7 +50,6 @@
     "hot-reload"
   ],
   "dependencies": {
-    "@types/webpack": "^4.41.26",
     "@types/webpack-sources": "^2.1.0",
     "colors": "^1.4.0",
     "lodash": "^4.17.21",
