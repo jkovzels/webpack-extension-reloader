@@ -33,7 +33,8 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({ filename: "style.css" }),
-    new CopyWebpackPlugin([
+	  new CopyWebpackPlugin({
+		  patterns: [
       {
         /***********************************************************************/
         /* If you have different configurations for development and production,*/
@@ -47,7 +48,7 @@ module.exports = {
       },
       { from: "./sample/plugin-src/popup.html" },
       { from: "./sample/icons" }
-    ])
+    ]})
   ],
   module: {
     rules: [
