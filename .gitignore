@@ -3,7 +3,9 @@
 .bin/
 .tmp/
 .DS_STORE
-dist/
+
+## Samples build folder
+sample
 
 # Logs
 logs
