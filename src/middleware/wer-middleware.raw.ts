@@ -5,14 +5,23 @@
 /*  This will be converted into a lodash templ., any  */
 /*  external argument must be provided using it       */
 /* -------------------------------------------------- */
+
+//import {Browser} from "webextension-polyfill-ts";
+
 (function(window) {
 
-	const injectionContext = {browser: null};
-	(function() {
+	const getExtensionApiPolyfill = function getExtensionApiPolyfill() {
+		//predending that there module and stuff so that 
+		//chrome API polyfill remain locked to this context 
+		//instead of leaking to window or elsewhere.
+		const exports = {};
+		const module = {exports: exports};
 		`<%= polyfillSource %>`;
-	}).bind(injectionContext)();
+		return module.exports;
+	};
 
-	const {browser}: any = injectionContext;
+	const {extension, runtime, tabs} = getExtensionApiPolyfill.call({why: 'screwing this just in case'});
+
 	const signals: any = JSON.parse('<%= signals %>');
 	const config: any = JSON.parse('<%= config %>');
 
@@ -27,7 +36,6 @@
 	} = signals;
 	const {RECONNECT_INTERVAL, SOCKET_ERR_CODE_REF} = config;
 
-	const {extension, runtime, tabs} = browser;
 	const manifest = runtime.getManifest();
 
 	// =============================== Helper functions ======================================= //
@@ -127,9 +135,15 @@
 	}
 
 	// ======================= Bootstraps the middleware =========================== //
-	runtime.reload
-		? extension.getBackgroundPage() === window ? backgroundWorker(new WebSocket(wsHost)) : extensionPageWorker()
-		: contentScriptWorker();
+	if(typeof runtime.reload === 'function') {
+		if(extension.getBackgroundPage() === window) {
+			backgroundWorker(new WebSocket(wsHost));
+		} else {
+			extensionPageWorker()
+		}
+	} else {
+		contentScriptWorker();
+	}
 })(window);
 
 /* ----------------------------------------------- */

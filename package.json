@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build": "set NODE_ENV=production& webpack",
-    "test": "NODE_ENV=test webpack && mocha dist/tests.js",
+    "test": "set NODE_ENV=test& webpack && mocha dist/tests.js",
     "analyze": "set NODE_ENV=production& webpack --env.analyze",
     "start:dev": "NODE_ENV=development webpack --watch",
     "start:sample": "set NODE_ENV=development& webpack --config sample/webpack.plugin.js --watch",
@@ -50,12 +50,14 @@
     "hot-reload"
   ],
   "dependencies": {
+    "@types/chrome": "^0.0.133",
     "@types/webpack-sources": "^2.1.0",
     "colors": "^1.4.0",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
     "useragent": "^2.3.0",
     "webextension-polyfill": "^0.7.0",
+    "webextension-polyfill-ts": "^0.25.0",
     "webpack-sources": "^2.2.0",
     "ws": "^7.4.3"
   },
