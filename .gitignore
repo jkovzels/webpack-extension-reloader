@@ -4,9 +4,6 @@
 .tmp/
 .DS_STORE
 
-## Samples build folder
-sample
-
 # Logs
 logs
 *.log
