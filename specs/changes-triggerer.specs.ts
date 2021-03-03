@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { spy, stub } from "sinon";
-import ws = require("ws");
+import * as ws from "ws";
 import changesTriggerer from "../src/hot-reload/changes-triggerer";
 import HotReloaderServer from "../src/hot-reload/HotReloaderServer";
 

@@ -1,6 +1,6 @@
 import { log } from "util";
 import * as webpack from "webpack";
-import ExtensionReloaderImpl from "../src/ExtensionReloader";
+import { ExtensionReloaderImpl } from "../src/ExtensionReloader";
 import { info } from "../src/utils/logger";
 import { IPluginOptions } from "../typings/webpack-extension-reloader";
 

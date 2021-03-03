@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { SinonStub, spy, stub } from "sinon";
 import * as webpack from "webpack";
-import ExtensionReloaderImpl from "../src/ExtensionReloader";
+import { ExtensionReloaderImpl } from "../src/ExtensionReloader";
 import { IExtensionReloaderInstance } from "../typings/webpack-extension-reloader";
 
 describe("ExtensionReloader", () => {

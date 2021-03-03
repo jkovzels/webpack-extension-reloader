@@ -1,7 +1,7 @@
 const {resolve} = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ExtensionReloaderPlugin = require("../dist/webpack-extension-reloader");
+const { ExtensionReloader } = require("../dist/webpack-extension-reloader");
 
 const mode = process.env.NODE_ENV;
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
 		/***********************************************************************/
 		/* By default the plugin will work only when NODE_ENV is "development" */
 		/***********************************************************************/
-		new ExtensionReloaderPlugin({
+		new ExtensionReloader({
 			entries: {
 				contentScript: "content-script",
 				background: "background",
