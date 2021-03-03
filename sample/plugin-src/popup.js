@@ -1,9 +1,9 @@
-console.info("Change anything here!");
+console.info("popup script running");
 
 import "./style.css";
 
 const element = document.createElement("span");
-element.innerText = "You clicked me! :)";
+element.innerText = "change me in the code";
 
 document
   .getElementById("button")

@@ -13,7 +13,7 @@ export default function middleWareSourceBuilder({
 	port,
 	reloadPage,
 }: IMiddlewareTemplateParams): Source {
-	const tmpl = template(rawSource);
+	const tmpl = template(rawSource, {interpolate: /<%=([\s\S]+?)%>/g});
 
 	const code = tmpl({
 		WSHost: `ws://localhost:${port}`,

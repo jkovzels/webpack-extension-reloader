@@ -16,7 +16,7 @@
 		//instead of leaking to window or elsewhere.
 		const exports = {};
 		const module = {exports: exports};
-		`<%= polyfillSource %>`;
+		"<%= polyfillSource %>";
 		return module.exports;
 	};
 

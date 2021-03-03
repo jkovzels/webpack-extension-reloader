@@ -1,1 +1,1 @@
-console.info("Change anything here!");
+console.info("background script running");
