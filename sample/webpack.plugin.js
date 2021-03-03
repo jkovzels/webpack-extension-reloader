@@ -50,16 +50,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js?$/,
-				exclude: /node_modules/,
-				use: {
-					loader: "babel-loader",
-					options: {
-						presets: [require("@babel/preset-env")]
-					}
-				}
-			},
-			{
 				test: /\.css$/,
 				use: [
 					{
@@ -73,5 +63,8 @@ module.exports = {
 				use: "raw-loader"
 			}
 		]
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js'],
 	}
 };
