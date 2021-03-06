@@ -18,12 +18,12 @@ A Webpack plugin to automatically reload browser extensions during development.
 
 npm
 ```bash
-npm install webpack-extension-reloader --save-dev
+npm install https://github.com/jkovzels/webpack-extension-reloader.git --save-dev
 ```
 
 yarn 
 ```bash
-yarn add webpack-extension-reloader --dev
+yarn add https://github.com/jkovzels/webpack-extension-reloader.git --D
 ```
 
 ## Solution for ...
@@ -55,6 +55,12 @@ plugins: [
       { from: "./src/popup.html" },
     ]),
 ]
+```
+
+or `import` if you are using `webpack.comfig.ts`
+
+```ts
+import { ExtensionReloader } from 'webpack-extension-reloader'
 ```
 
 You can point to your `manifest.json file`...
