@@ -1,8 +1,8 @@
 import { Compiler } from "webpack";
 
 export interface IPluginOptions {
-  port: number;
-  reloadPage: boolean;
+  port?: number;
+  reloadPage?: boolean;
   manifest?: string;
   entries?: IEntriesOption;
 }
