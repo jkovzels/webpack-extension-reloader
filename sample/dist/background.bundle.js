@@ -1296,7 +1296,7 @@
                     loadedTabs.forEach(tab => tab.id && tabs.sendMessage(tab.id, { type: SIGN_RELOAD }));
                     socket.send(JSON.stringify({
                         type: SIGN_RELOADED,
-                        payload: formatter(`${timeFormatter(new Date())} - ${manifest.name} successfully reloaded`),
+                        payload: formatter(`${timeFormatter(new Date())} - ${manifest.name} successfully reloaded.`),
                     }));
                     runtime.reload();
                 });

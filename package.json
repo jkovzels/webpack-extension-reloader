@@ -27,7 +27,7 @@
     "build": "set NODE_ENV=production& webpack",
     "test": "set NODE_ENV=test& webpack && mocha dist/tests.js",
     "analyze": "set NODE_ENV=production& webpack --env.analyze",
-    "start:dev": "NODE_ENV=development webpack --watch",
+    "start:dev": "set NODE_ENV=development& webpack --watch",
     "start:sample": "set NODE_ENV=development& webpack --config sample/webpack.plugin.js --watch",
     "prepublishOnly": "yarn build",
     "lint": "tslint \"{src,client,typings,specs}/**/*.ts\" --fix --format codeFrame",

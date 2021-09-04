@@ -84,7 +84,7 @@
 							type: SIGN_RELOADED,
 							payload: formatter(
 								`${timeFormatter(new Date())} - ${manifest.name
-								} successfully reloaded`,
+								} successfully reloaded.`,
 							),
 						}),
 					);

@@ -1,9 +1,9 @@
-console.info("popup script running");
+console.info("popup script running here");
 
 import "./style.css";
 
 const element = document.createElement("span");
-element.innerText = "change me in the code";
+element.innerText = "change me in the code.";
 
 document
   .getElementById("button")
